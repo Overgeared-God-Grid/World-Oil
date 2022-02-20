@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\scrollbar"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Test 4"
+	}
+}

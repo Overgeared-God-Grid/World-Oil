@@ -1,0 +1,245 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+
+:root:lang(en) {
+  --lng-world: "The world of oils";
+  --lng-read: "Read";
+  --lng-apricot: "Apricot Oil";
+  --lng-avocado: "Avocado Oil";
+  --lng-peanut: "Peanut butter";
+  --lng-vanilla: "Vanilla oil";
+  --lng-calendula: "Calendula oil";
+  --language-selection-phrase: "Change language to: ";
+  --change-lang: "Russian";
+} 
+:root:lang(ru){
+  --lng-world: "Мир Масел";
+  --lng-read: "Читать";
+  --lng-apricot: "Абрикосовое Масло";
+  --lng-avocado: "Масло Авокадо";
+  --lng-peanut: "Арахисовое масло";
+  --lng-vanilla: "Ванильное масло";
+  --lng-calendula: "Масло календулы";
+  --language-selection-phrase: "Выбрать язык: ";
+  --change-lang: "English";
+}
+
+html {
+  /* background-color: #ffffff; */
+  background-color: #ffffff;
+}
+
+body {
+  color: #000000;
+  font-family: 'Quicksand', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+} 
+ header{
+  text-align: center;
+}
+
+/*  */
+
+.cursor{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #202020;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+}
+
+.cursor2{
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #202020;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+}
+
+.no-cursor {
+  cursor: none;
+}
+
+
+.container:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #202020;
+  opacity: .5;
+}
+
+body:hover ~ .cursor2{
+  opacity: 0;
+}
+
+/*  */
+
+.language-selection {
+  padding: 20px 50px;
+}
+
+.language-selection #change-language {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+} 
+
+.language-selection label:before {
+  content: var(--change-lang);
+  color: blue;
+  cursor: pointer;
+}
+
+h3 {
+  color: white;
+  font-size: 24px;
+  margin: 20px 0 0 20px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+
+}
+
+a{
+  display: block;
+  color: white;
+  align-self: end;
+  text-decoration: none;
+  margin: 0 0 20px 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+p {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  align-self: end;
+  margin: 0 0 20px 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+
+img {
+  position: absolute;
+  top: 0;
+  height: 110%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+}
+
+/* demo purposes only */
+
+.card {
+  height: 215px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover {
+  transform: scale(1.035, 1.035);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover img {
+  transform: translateY(-10px);
+}
+
+.img-oil{
+  width: 760px;
+}
+@media screen and (max-width: 420px) {
+  .container{
+    margin: 0;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+/* tRANSLATE START */
+
+.lng-world:before{
+  content: var(--lng-world);
+}
+
+.language-selection:before {
+  content: var(--language-selection-phrase);
+}
+
+.lng-read:before{
+  content: var(--lng-read);
+}
+
+.lng-apricot:before{
+  content: var(--lng-apricot);
+}
+
+.lng-avocado:before{
+  content: var(--lng-avocado);
+}
+
+.lng-peanut:before{
+  content: var(--lng-peanut);
+}
+
+.lng-vanilla:before{
+  content: var(--lng-vanilla);
+}
+
+.lng-calebdula:before{
+  content: var(--lng-calendula);
+}
+
+/* Translate END */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+} 
+
+::-webkit-scrollbar-thumb {
+  background: #939393;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
